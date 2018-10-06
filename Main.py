@@ -12,17 +12,17 @@ app= Flask(__name__)
 app.config['DEBUG'] = True
    
 
-@app.route("/", methods=['GET'])
+@app.route('/', methods=['GET'])
 def index():
     template = jinja_env.get_template('index.html')
     return template.render()
 
 
-@app.route("/welcome", methods=['GET'])
+@app.route('/welcome', methods=['POST','GET'])
 def welcome():
     username = request.form['username']
-    template = jinja_env.get_template('welcome.html)')
-    return template.render(name=username)
+    template = jinja_env.get_template('welcome.html')
+    return template.render('welcome.html', name=username)
 
 '''
 @app.route("/signup", methods=['POST'])
