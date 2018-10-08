@@ -1,41 +1,33 @@
 <!doctype html>
 <html>
-<head><font size="+2"><b>Sign-up</b></font></head><br><br>
-    <style type="text/css">
-        .tab{   display:inline-block; 
-                margin-left: 40px; }
-        .error{ color:red;}
-    </style>
-    <body>
+    <head><font size="+2"><b>Sign-up</b></font></head><br><br>
+        <style type="text/css">
+            .tab{   display:inline-block; 
+                    margin-left: 40px; }
+            .tabtab{display:inline-block; 
+                    margin-left: 80px; }
+            .error{ color:red;}
+        </style>
+    </head>
+        <body>
 
-        <form action = "/signup" method='POST'>
-            <label for="username" >Username <span class="tab">
-                <p class="error">{{user_error}}</p>
-                <input id="username" type="text" name="username" /><br>
-            </label>
-           
-            <label for="password">Password &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input id="password" type="password" name="password" /><br>
-                <p class="error">{{password_error}}</p>
-            </label>
-            
-            <label for="ver_password">Verify Password
-                <input id="ver_password" type="password" name="ver_password" /><br>
-                <p class="error">{{password_ver_error}}</p>
-            </label>
-            
-            <label for="email">Email (optional) 
-                <input id="email" type="text" name="email" /><br>
-                <p class="error">{{email_error}}</p>
-            </label>
+            <form action="/signup" method='POST'>
+                <label for="username" >Username  </label>
+                    <input id="username" type="text" name="username" value ='{{username}}' class="tab"/><span class="tab error">{{user_error}}</span>
+                <br><br>
+                <label for="password">Password&nbsp</label>
+                    <input id="password" type="password" name="password" value='{{password}}' class="tab"/><span class="tab error">{{pwd_error}}</span>
+                <br><br>
+                <label for="ver_password">Verify Password </label>
+                    <input id="ver_password" type="password" name="ver_password" value='{{ver_password}}'/><span class="tab error">{{pwd_ver_error}}</span>
+                <br><br>
+                <label for="email">Email (optional) </label>
+                    <input id="email" type="text" name="email" value='{{email}}'/><span class="tab error">{{email_error}}</span>
+                <br><br>
+                <input type="submit" value="Sign me up!"/>
+                    
+            </form>
 
-            <input type="submit" value="Sign me up!"/>
-            
-            
-            
-            
-        </form>
+        </body>
 
-    </body>
-</head>
 </html>
